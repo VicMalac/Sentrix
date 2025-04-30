@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <title>Valida+ | Histórico</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAzh7grLVeDUCsW00y4-B7w2waEtnM6RzA",
+      authDomain: "validamais-54b99.firebaseapp.com",
+      projectId: "validamais-54b99",
+      storageBucket: "validamais-54b99.appspot.com",
+      messagingSenderId: "554575483890",
+      appId: "1:554575483890:web:3d66599c3b834c62c9116b"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="perfil.html">
+    <img src="../assets/img/icons/profile.png" alt="Perfil" class="profile-icon">
+  </a>
+
+  <div class="menu">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="#" id="logoutLink">Sair</a>
+  </div>
+</header>
+
+<main class="dashboard-container">
+  <h1>Histórico de Cartões Validados</h1>
+  <div id="listaCartoes" style="margin-top: 30px;"></div>
+</main>
+
+<script src="../js/historico.js"></script>
+</body>
+</html>

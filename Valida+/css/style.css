@@ -1,0 +1,370 @@
+/* Reset geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Cabeçalho padrão */
+  .header {
+    background: #ffffff;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .logo-centered {
+    height: 50px;
+  }
+  
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .menu a {
+    color: #6a1b9a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .menu a:hover {
+    color: #512da8;
+  }
+  
+  /* Container principal (login, registro, perfil) */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .login-container h1 {
+    margin-bottom: 30px;
+    color: #6a1b9a;
+    text-align: center;
+  }
+  
+  /* Formulários */
+  .formulario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-container form input,
+  .form-validacao input,
+  #perfilForm input,
+  #registerForm input,
+  #loginForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #e8f0fe;
+    font-size: 16px;
+  }
+  
+  /* Inputs lado a lado (para perfil e validador) */
+  .linha {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .linha input {
+    flex: 1;
+  }
+  
+  /* Botões principais */
+  button, .form-validacao button, #loginButton, #registerButton, #salvarPerfil, #validarCartao {
+    width: 100%;
+    padding: 12px;
+    background: #6a1b9a;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  button:hover, .form-validacao button:hover {
+    background: #8e24aa;
+    transform: scale(1.05);
+  }
+  
+  /* Mensagens */
+  .mensagem-erro {
+    margin-top: 10px;
+    color: #f44336;
+    font-size: 14px;
+    background-color: #ffe6e6;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .mensagem-sucesso {
+    margin-top: 10px;
+    color: #4caf50;
+    font-size: 14px;
+    background-color: #e8f5e9;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  /* Link abaixo dos formulários */
+  .register-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .register-link a {
+    color: #6a1b9a;
+    text-decoration: none;
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Dashboard */
+  .dashboard-container {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .dashboard-container h1 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-container p {
+    color: #555;
+    margin-bottom: 40px;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+  
+  /* Botão de logout */
+  .logout-button {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .logout-button:hover {
+    background-color: #8e24aa;
+  }
+  
+  .container-validacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Espaço entre cartão e formulário */
+    padding: 60px 20px;
+  }
+  
+  .cartoes {
+    width: 320px;
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  /* Cada cartão */
+  .cartao {
+    width: 100%;
+    height: 100%;
+    background: #222;
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.6s ease;
+  }
+  
+  /* Frente e verso */
+  .cartao-frente {
+    transform: rotateY(0deg);
+    z-index: 2;
+  }
+  
+  .cartao-verso {
+    transform: rotateY(180deg);
+  }
+  
+  /* Quando vira */
+  .cartoes.flipped .cartao-frente {
+    transform: rotateY(-180deg);
+  }
+  
+  .cartoes.flipped .cartao-verso {
+    transform: rotateY(0deg);
+  }
+  
+  /* Conteúdo nos cartões */
+  .numero-cartao, .nome-cartao, .validade-cartao, .cvv-cartao {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
+  
+  .banda-magnetica {
+    background: #555;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  /* Formulário */
+  .form-validacao {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .form-validacao input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #e8f0fe;
+  }
+  
+  .form-validacao .linha {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .form-validacao .linha input {
+    flex: 1;
+  }
+  
+  .form-validacao button {
+    width: 100%;
+    padding: 12px;
+    background: #6a1b9a;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .form-validacao button:hover {
+    background: #8e24aa;
+    transform: scale(1.05);
+  }
+  
+  
+  /* Selos de segurança */
+  .selos-seguranca {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .selos-seguranca img {
+    height: 40px;
+  }
+  .cartao-historico {
+    width: 320px;
+    height: 180px;
+    background: #222;
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+  }
+  
+  .cartao-historico:hover {
+    transform: scale(1.05);
+  }
+  
+  .cartao-historico .numero-cartao,
+  .cartao-historico .nome-cartao,
+  .cartao-historico .validade-cartao {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  
