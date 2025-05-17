@@ -1,2 +1,5 @@
-# Valida-
-Repositório que contém tudo o que será feito com a empresa criada para os trabalhos da FATEC chamada Sentrix
+# Valida-Mais
+
+Valida+ é um programa feito para um pitch de vendas na faculdade de Gestão da Tecnologia da Informação da Fatec Omair Fagundes em Bragança Paulista
+
+Sentrix foi a empresa que foi criada no meu grupo para esses trabalhos que serão feitos
