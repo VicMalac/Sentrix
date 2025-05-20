@@ -83,12 +83,25 @@
     @media (max-width: 576px) {
       .cartao-realista {
         width: 90vw;
-        height: 200px;
+        height: auto;
         margin: 10px auto;
+      }
+      .cartao-inner {
+        height: auto;
+        min-height: 220px;
+      }
+      .cartao-frente,
+      .cartao-verso {
+        height: auto;
+        padding: 16px;
       }
       .linha-dados {
         flex-direction: column;
-        gap: 8px;
+        gap: 4px;
+      }
+      .linha-dados > div {
+        display: flex;
+        justify-content: space-between;
       }
       .cartao-frente img.logo,
       .cartao-frente img.logo-nubank,
