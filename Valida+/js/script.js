@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        window.location.href = "Valida+/pages/dashboard.html";
+        window.location.href = "dashboard.html";
       }
     });
   
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       try {
         await firebase.auth().signInWithEmailAndPassword(email, senha);
-        window.location.href = "Valida+/pages/dashboard.html";
+        window.location.href = "dashboard.html";
       } catch (error) {
         erroBox.textContent = traduzirErro(error.code);
         erroBox.classList.remove('d-none');
