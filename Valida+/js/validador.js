@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const db = firebase.firestore();
-  let usuarioLogado = null; // Variável para guardar o user corretamente depois do carregamento
+  let usuarioLogado = null;
 
   const nomeInput = document.getElementById('nomeCartao');
   const numeroInput = document.getElementById('numeroCartao');
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const visualCVV = document.getElementById('visualCVV');
   const cartaoContainer = document.getElementById('cartaoContainer');
 
-  // Atualizar cartão em tempo real
+  // Atualização em tempo real
   nomeInput.addEventListener('input', () => {
     visualNome.textContent = nomeInput.value || "Nome no Cartão";
   });
@@ -22,95 +22,95 @@ document.addEventListener('DOMContentLoaded', () => {
     let valor = numeroInput.value.replace(/\D/g, '').slice(0, 16);
     numeroInput.value = valor.replace(/(.{4})/g, '$1 ').trim();
     visualNumero.textContent = numeroInput.value || "0000 0000 0000 0000";
-  });  
+  });
 
   validadeInput.addEventListener('input', () => {
-    validadeInput.value = validadeInput.value.replace(/\D/g, '').slice(0, 4); // só números
-    const v = validadeInput.value;
-    if (v.length === 4) {
-      const mes = v.substring(0, 2);
-      const ano = v.substring(2);
-      visualValidade.textContent = `${mes}/${ano}`;
-    } else {
-      visualValidade.textContent = "MM/AAAA";
-    }
-  });
+  let valor = validadeInput.value.replace(/\D/g, '').slice(0, 4); // mantém só números
+
+  let mes = valor.substring(0, 2);
+  let ano = valor.substring(2, 4);
+
+  if (mes.length === 2 && parseInt(mes) > 12) mes = '12';
+  if (mes.length === 2 && parseInt(mes) < 1) mes = '01';
+
+  let formatado = mes;
+  if (ano) formatado += '/' + ano;
+
+  validadeInput.value = formatado;
+  visualValidade.textContent = formatado || "MM/AAAA";
+});
+
+
 
   cvvInput.addEventListener('input', () => {
     cvvInput.value = cvvInput.value.replace(/\D/g, '').slice(0, 3);
     visualCVV.textContent = cvvInput.value || "CVV";
   });
 
-  // Flip no cartão ao focar CVV
-  cvvInput.addEventListener('focus', () => {
-    cartaoContainer.classList.add('flipped');
+  // Flip
+  cvvInput.addEventListener('focus', () => cartaoContainer.classList.add('flipped'));
+  cvvInput.addEventListener('blur', () => cartaoContainer.classList.remove('flipped'));
+  nomeInput.addEventListener('focus', () => cartaoContainer.classList.remove('flipped'));
+  numeroInput.addEventListener('focus', () => cartaoContainer.classList.add('flipped'));
+  validadeInput.addEventListener('focus', () => cartaoContainer.classList.add('flipped'));
+
+  // Autenticação
+  firebase.auth().onAuthStateChanged(user => {
+    usuarioLogado = user || null;
   });
 
-  cvvInput.addEventListener('blur', () => {
-    cartaoContainer.classList.remove('flipped');
-  });
-  // Flip ao clicar nos campos (frente/verso)
-nomeInput.addEventListener('focus', () => {
-  document.getElementById('cartaoContainer').classList.remove('flipped');
-});
-
-numeroInput.addEventListener('focus', () => {
-  document.getElementById('cartaoContainer').classList.add('flipped');
-});
-
-validadeInput.addEventListener('focus', () => {
-  document.getElementById('cartaoContainer').classList.add('flipped');
-});
-
-
-  // Verificar quando o usuário for autenticado
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      usuarioLogado = user;
-    } else {
-      usuarioLogado = null;
-    }
-  });
-
-  // Submit de validação
+  // Envio do formulário
   document.getElementById('cartaoForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (!usuarioLogado) {
-      alert('Você não está logado. Atualize a página ou faça login.');
+      alert("Você não está logado.");
       return;
     }
 
     const nome = nomeInput.value.trim();
     const numero = numeroInput.value.trim();
-    const validadeAtual = validadeInput.value.trim();
+    const validadeDigitada = validadeInput.value.trim();
+    const cvv = cvvInput.value.trim();
 
-    if (!nome || !numero || !validadeAtual) {
-      alert('Preencha todos os campos!');
+    if (!nome || !numero || !validadeDigitada || !cvv) {
+      alert("Preencha todos os campos.");
       return;
     }
 
-    const partes = validadeAtual.split("-");
-    const novaValidade = `${partes[1]}/${parseInt(partes[0]) + 2}`;
+    const [mesStr, anoStr] = validadeDigitada.split('/');
+    const mes = parseInt(mesStr);
+    let ano = parseInt(anoStr);
+
+    const agora = new Date();
+    const anoAtual = agora.getFullYear() % 100;
+    const novaValidade = (ano < anoAtual)
+      ? `${mesStr}/${(agora.getFullYear() + 2).toString().slice(-2)}`
+      : `${mesStr}/${anoStr}`;
 
     try {
-      await db.collection('usuarios').doc(usuarioLogado.uid).collection('cartoes').add({
-        nome: nome,
-        numero: numero,
-        novaValidade: novaValidade,
-        criadoEm: firebase.firestore.FieldValue.serverTimestamp()
-      });
+      await db.collection('usuarios')
+        .doc(usuarioLogado.uid)
+        .collection('cartoes')
+        .add({
+          nome,
+          numero,
+          novaValidade,
+          cvv,
+          criadoEm: firebase.firestore.FieldValue.serverTimestamp()
+        });
 
-      alert('Cartão validado e salvo com sucesso!');
+      alert("Cartão salvo com sucesso.");
+
       document.getElementById('cartaoForm').reset();
       visualNome.textContent = "Nome no Cartão";
       visualNumero.textContent = "0000 0000 0000 0000";
       visualValidade.textContent = "MM/AAAA";
       visualCVV.textContent = "CVV";
 
-    } catch (error) {
-      console.error('Erro ao salvar no Firestore:', error);
-      alert('Erro ao validar cartão. Tente novamente.');
+    } catch (err) {
+      console.error("Erro ao salvar cartão:", err);
+      alert("Erro ao validar cartão.");
     }
   });
 });

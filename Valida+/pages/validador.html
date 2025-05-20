@@ -194,6 +194,38 @@
       .logo-megacard {
         height: 30px;
       }
+      @media (max-width: 768px) {
+  .container-validacao {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  #cartaoContainer {
+    width: 95vw;
+    height: auto;
+    max-width: 360px;
+  }
+
+  .cartao {
+    height: auto;
+    min-height: 180px;
+  }
+
+  .cartao-frente,
+  .cartao-verso {
+    position: relative;
+    height: auto;
+    min-height: 180px;
+  }
+
+  .form-validacao {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
     </style>
   </head>
 
@@ -249,7 +281,7 @@
           <input type="text" id="nomeCartao" placeholder="Nome no Cartão" required>
           <input type="text" id="numeroCartao" placeholder="Número do Cartão" maxlength="19" required>
           <div class="linha">
-            <input type="text" id="validadeCartao" placeholder="MM/YY" maxlength="4" required>
+            <input type="text" id="validadeCartao" placeholder="MM/YY" maxlength="5" required>
             <input type="text" id="cvvCartao" placeholder="CVV" maxlength="3" required>
           </div>
           <button type="submit">Verificar</button>
