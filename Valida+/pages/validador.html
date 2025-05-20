@@ -237,7 +237,7 @@
       </a>
       <div class="menu">
         <a href="dashboard.html">Dashboard</a>
-        <a href="#" id="logoutLink">Sair</a>
+        <a href="login.html" id="logoutLink">Sair</a>
       </div>
     </header>
 
@@ -302,7 +302,7 @@
         logoutLink?.addEventListener('click', (e) => {
           e.preventDefault();
           firebase.auth().signOut().then(() => {
-            window.location.href = "Valida+/pages/login.html";
+            window.location.href = "login.html";
           }).catch((error) => {
             console.error('Erro ao deslogar:', error);
           });
