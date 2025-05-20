@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     firebase.auth().onAuthStateChanged(async (user) => {
       if (!user) {
-        window.location.href = "../index.html";
+        window.location.href = "";
         return;
       }
   
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     logoutLink?.addEventListener('click', (e) => {
       e.preventDefault();
       firebase.auth().signOut().then(() => {
-        window.location.href = "../index.html";
+        window.location.href = "login.html";
       }).catch((error) => {
         console.error('Erro ao sair:', error);
       });

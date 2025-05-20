@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         boasVindas.textContent = `Bem-vindo, ${user.email}!`;
       }
     } else {
-      window.location.href = "../index.html";
+      window.location.href = "login.html";
     }
   });
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   logoutLink?.addEventListener('click', (e) => {
     e.preventDefault();
     firebase.auth().signOut().then(() => {
-      window.location.href = "../index.html";
+      window.location.href = "login.html";
     }).catch((error) => {
       console.error('Erro ao sair:', error);
     });

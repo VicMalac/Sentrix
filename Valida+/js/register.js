@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       await firebase.auth().createUserWithEmailAndPassword(email, senha);
-      window.location.href = "../index.html";
+      window.location.href = "login.html";
     } catch (error) {
       mensagemErro.textContent = traduzirErro(error.code);
       mensagemErro.classList.remove('d-none');

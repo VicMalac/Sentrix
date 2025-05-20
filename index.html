@@ -1,109 +1,413 @@
-<<!-- Documento com destino somente de amostra -->
-<!doctype html>
-<html lang="pt-BR" data-bs-theme="dark">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="Valida+/assets/img/favicon.png">
-    <title>Valida+ | Login</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Valida+ | Início</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    .link-footer {
+      color: #fff !important;
+      text-decoration: none;
+    }
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      html, body {
-        height: 100%;
-        font-family: 'Segoe UI', sans-serif;
+    .link-footer:hover {
+      color: #d0d0d0 !important;
+      text-decoration: underline;
+    }
+    body {
+      background-color: #2b3035;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    .top-bar img {
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+    }
+    .logo {
+      display: block;
+      margin: 2rem auto 1rem;
+      max-width: 200px;
+    }
+    .section-title {
+      color: #9c27b0;
+      margin-top: 2.5rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.8rem;
+    }
+    p {
+      color: #bbb;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .swiper {
+      width: 100%;
+      padding: 20px 0;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide img {
+      height: 50px;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+    .swiper-slide img:hover {
+      transform: scale(1.1);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.6s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: none;
       }
+    }
+    #politicaTextoAuto p,
+      #modalPolitica .modal-body p {
+        margin-bottom: 1rem;
+    }
 
-      .form-signin {
-        max-width: 330px;
-        padding: 1rem;
-      }
+  </style>
+</head>
+<body>
+  <header class="top-bar" style="justify-content: space-between;">
+    <div></div>
+    <div class="d-flex align-items-center gap-4">
+      <a href="Valida+/pages/login.html" class="text-decoration-none text-white d-flex align-items-center">
+        <img src="Valida+/assets/img/icons/profile.png" alt="Login" style="margin-right: 6px;">
+        <span>Entrar</span>
+      </a>
+      <a href="Valida+/pages/register.html" class="text-decoration-none text-white">
+        Registrar-se
+      </a>
+    </div>
+  </header>
+  <main class="container text-center">
+    <img height="100px" src="Valida+/assets/img/logo.png" class="logo" alt="Logo Valida+">
+    <h1 style="color: #fff; font-size: 2rem; margin-top: 1rem;">Renove seu cartão. Economize tempo. Evite burocracias.</h1>
+    <p style="color: #bbb; font-size: 1.1rem;">Atualize a validade do seu cartão em segundos, com segurança e apoio dos principais bancos.</p>
+    <section class="fade-in">
+      <h2 class="section-title">Como funciona?</h2>
+      <p>
+        O Valida+ é um sistema inovador que permite que você estenda a validade do seu cartão de crédito ou débito por mais 2 anos. Basta criar uma conta, realizar o login e inserir os dados do seu cartão com segurança. Nossa tecnologia verifica o cartão e realiza a atualização da validade com base na data atual, sem necessidade de solicitar um novo cartão físico. Todo o processo é rápido, seguro e compatível com os principais bancos parceiros.
+      </p>
+    </section>
 
-      .logo-img {
-        width: 60px;
-        height: 60px;
-      }
+    <section class="fade-in">
+      <h2 class="section-title">Para que serve?</h2>
+      <p>
+        A principal função do Valida+ é oferecer uma solução prática e sustentável para evitar o reenvio de cartões. Ao atualizar a validade do seu cartão existente, você economiza tempo, evita custos com emissão e entrega de novos cartões, e ainda contribui com o meio ambiente ao reduzir o uso de plástico. Além disso, elimina burocracias e interrupções em pagamentos recorrentes. Agilidade, economia e praticidade — tudo em uma única ferramenta.
+      </p>
+    </section>
 
-      .form-floating input:focus {
-        background-color: #212529 !important;
-        color: #fff;
-        box-shadow: none;
-        border-color: #6a1b9a;
-      }
+    <section class="fade-in">
+      <h2 class="section-title">Onde foi fundado e quando?</h2>
+      <p>
+        O projeto Valida+ nasceu em 2017, na cidade de Guarulhos - SP, em meio à transformação digital no setor financeiro com o surgimento do Pix. Percebendo a preocupação dos bancos com a possível queda no uso de cartões, desenvolvemos uma proposta segura e eficaz para estender a validade dos cartões já existentes. Desde então, apresentamos a solução a diversas instituições financeiras e conquistamos a confiança de grandes parceiros no mercado.
+      </p>
+    </section>
 
-      .form-floating label {
-        color: #aaa;
-      }
+    <section class="fade-in">
+      <h2 class="section-title">Valor Investido</h2>
+      <p>
+        Graças à aceitação do mercado e à confiança de investidores e parceiros estratégicos, o Valida+ já recebeu mais de R$ 150 milhões em aportes. Esse valor tem sido essencial para garantir segurança, escalabilidade e performance, além de nos permitir investir constantemente em inovação e suporte ao cliente.
+      </p>
+    </section>
 
-      .mensagem-erro {
-        margin-top: 15px;
-        color: #f44336;
-        background: #ffe6e6;
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
-        font-size: 14px;
-      }
-      input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        textarea:-webkit-autofill,
-        select:-webkit-autofill {
-        box-shadow: 0 0 0px 1000px #212529 inset !important;
-        -webkit-text-fill-color: #fff !important;
-        transition: background-color 5000s ease-in-out 0s;
-        }
+    <section class="fade-in">
+      <h2 class="section-title">Parceiros</h2>
+      <p>
+        Nossos parceiros são fundamentais para o funcionamento do Valida+. Trabalhamos lado a lado com instituições financeiras reconhecidas, garantindo integração segura e reconhecimento oficial do processo de renovação. Conheça quem já está com a gente:
+      </p>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="Valida+/assets/img/nubank.png" alt="Nubank"></div>
+          <div class="swiper-slide"><img src="Valida+/assets/img/bradesco.png" alt="Bradesco"></div>
+          <div class="swiper-slide"><img src="Valida+/assets/img/santander.png" alt="Santander"></div>
+          <div class="swiper-slide"><img src="Valida+/assets/img/inter.png" alt="Inter"></div>
+          <div class="swiper-slide"><img src="Valida+/assets/img/itau.png" alt="Itaú"></div>
+          <div class="swiper-slide"><img src="Valida+/assets/img/bancopan.png" alt="Banco PAN"></div>
+          <div class="swiper-slide"><img src="Valida+/assets/img/bancosafra.png" alt="Banco Safra"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer style="background-color: #24282c; color: #bbb; padding: 60px 20px 20px;">
+    <div class="container text-center mb-5">
+      <h5 style="color: white; font-size: 1.4rem;">Pronto para começar com o Valida+?</h5>
+      <p style="max-width: 600px; margin: 10px auto 25px;">
+        Crie sua conta agora mesmo e aproveite todas as vantagens de renovar seu cartão com segurança e agilidade.
+      </p>
+      <a href="Valida+/pages/register.html" class="btn btn-light px-4 py-2 fw-bold" style="color: #6a1b9a;">
+        Criar sua Conta
+      </a>
+    </div>
 
-    </style>
+    <div class="container border-top border-secondary pt-5 pb-4">
+      <div class="row text-start text-md-left justify-content-between">
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
-    <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyAzh7grLVeDUCsW00y4-B7w2waEtnM6RzA",
-        authDomain: "validamais-54b99.firebaseapp.com",
-        projectId: "validamais-54b99",
-        storageBucket: "validamais-54b99.appspot.com",
-        messagingSenderId: "554575483890",
-        appId: "1:554575483890:web:3d66599c3b834c62c9116b"
-      };
-      firebase.initializeApp(firebaseConfig);
-    </script>
-  </head>
-  <body class="d-flex align-items-center justify-content-center bg-body-tertiary">
-
-    <main class="form-signin w-100 m-auto text-center">
-      <form id="loginForm">
-        <img class="mb-4 logo-img" src="Valida+/assets/img/logo.png" alt="Valida+">
-        <h1 class="h3 mb-3 fw-normal">Faça login</h1>
-
-        <div class="form-floating">
-          <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-          <label for="email">E-mail</label>
+        <div class="col-md-3 mb-4">
+          <img src="Valida+/assets/img/logo.png" alt="Logo Valida+" style="height: 50px;">
+          <p class="mt-3 mb-1 text-light">&copy; 2025 Valida+. Todos os direitos reservados.</p>
+          <small class="text-muted">Feito com tecnologia nacional para bancos nacionais.</small>
         </div>
 
-        <div class="form-floating mt-2">
-          <input type="password" class="form-control" id="senha" placeholder="Senha" required>
-          <label for="senha">Senha</label>
+        <div class="col-md-2 mb-4">
+          <h6 class="text-light fw-bold">PARCERIAS</h6>
+          <ul class="list-unstyled">
+            <li><span class="link-footer">Nubank</span></li>
+            <li><span class="link-footer">Bradesco</span></li>
+            <li><span class="link-footer">Itaú</span></li>
+          </ul>
         </div>
 
-        <div class="form-check text-start my-3">
-          <input class="form-check-input" type="checkbox" id="rememberMe">
-          <label class="form-check-label" for="rememberMe">Lembrar de mim</label>
+        <div class="col-md-2 mb-4">
+          <h6 class="text-light fw-bold">SOBRE</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="link-footer" data-bs-toggle="modal" data-bs-target="#modalSobre">Sobre nós</a></li>
+            <li><a href="#" class="link-footer" data-bs-toggle="modal" data-bs-target="#modalTrabalho">Nosso Trabalho</a></li>
+          </ul>
         </div>
 
-        <button class="btn btn-primary w-100 py-2" type="submit">Entrar</button>
+        <div class="col-md-2 mb-4">
+          <h6 class="text-light fw-bold">SUPORTE</h6>
+          <ul class="list-unstyled">
+            <li><a href="mailto:sac@validamais.com.br" class="link-footer">sac@validamais.com.br</a></li>
+<li><a href="https://wa.me/5511941566935" target="_blank" class="link-footer">WhatsApp</a></li>
+          </ul>
+        </div>
 
-        <div id="mensagem-erro" class="mensagem-erro d-none"></div>
+        <div class="col-md-3 mb-4">
+          <h6 class="text-light fw-bold">PRIVACIDADE</h6>
+          <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#modalPolitica">
+            Política de Privacidade
+          </button>
+        </div>
 
-        <p class="mt-3"><a href="Valida+/pages/register.html" class="text-white">Criar conta</a></p>
-        <p class="mt-5 mb-3 text-body-secondary">&copy; 2025</p>
-      </form>
-    </main>
+      </div>
+    </div>
 
-    <script src="../Sentrix/Valida+/js/script2.js"></script>
-  </body>
+    <div class="text-center mt-3" style="font-size: 5px; color: #666;">
+      Não nos responsabilizamos por qualquer erro de tratamento de dados
+    </div>
+  </footer>
+  <div class="modal fade" id="modalSobre" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content" style="background-color: #2b3035; color: #fff; border-radius: 16px; padding: 20px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Sobre nós</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p>
+            O Valida+ é uma solução desenvolvida em Guarulhos - SP desde 2017 com o objetivo de prolongar a validade de cartões bancários com segurança e praticidade.
+            Trabalhamos com os principais bancos do país para oferecer economia, agilidade e sustentabilidade para nossos usuários.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalTrabalho" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content" style="background-color: #2b3035; color: #fff; border-radius: 16px; padding: 20px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Nosso Trabalho</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p>
+            Nosso trabalho é tornar o processo de renovação de cartões simples, rápido e digital. Reduzimos o uso de plástico, evitamos a emissão de novos cartões e oferecemos uma plataforma segura e integrada com diversas instituições financeiras.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="modalPolitica" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content" style="background-color: #2b3035; color: #fff; border-radius: 16px; padding: 20px;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Política de Privacidade</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" style="max-height: 300px; overflow-y: auto;">
+        <p><strong>Política de Privacidade – Valida+</strong></p>
+
+        <p><strong>1. Introdução</strong></p>
+        <p>Esta Política de Privacidade descreve como coletamos, usamos, divulgamos e protegemos suas informações ao acessar e utilizar os serviços oferecidos pela plataforma Valida+. Ao utilizar nossos serviços, você concorda com a coleta e uso de informações de acordo com esta política.</p>
+        <p>Nos comprometemos com a transparência, segurança e respeito aos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018) e demais legislações aplicáveis.</p>
+
+        <p><strong>2. Informações Coletadas</strong></p>
+        <p>Durante a utilização da plataforma Valida+, coletamos diferentes tipos de dados pessoais para fins de identificação, autenticação, personalização e melhoria da experiência do usuário.</p>
+
+        <p><strong>2.1. Dados fornecidos pelo usuário</strong></p>
+        <p>Nome completo<br>Endereço de e-mail<br>Telefone de contato<br>Data de nascimento<br>Informações do cartão (nome, número, validade, CVV) – armazenadas com segurança e com acesso restrito<br>Dados enviados por meio de formulários como login, registro e atualização de perfil</p>
+
+        <p><strong>2.2. Dados coletados automaticamente</strong></p>
+        <p>Informações de acesso (IP, tipo de navegador, dispositivo)<br>Registros de atividades (data e hora de login, histórico de validações)<br>Identificador único de usuário (UID) fornecido pelo Firebase Authentication</p>
+
+        <p><strong>3. Finalidade da Coleta</strong></p>
+        <p>Todos os dados coletados têm como objetivo garantir a operação, segurança e melhoria contínua da plataforma Valida+. Os principais usos incluem: autenticação, criação de contas, validação de cartões, comunicação com o usuário, prevenção de fraudes e obrigações legais.</p>
+
+        <p><strong>4. Compartilhamento de Dados</strong></p>
+        <p>Seus dados não são comercializados, vendidos ou compartilhados com terceiros, exceto com: prestadores de serviço autorizados (como Firebase), por obrigação legal, ou em caso de fusão/aquisição.</p>
+
+        <p><strong>5. Armazenamento e Segurança</strong></p>
+        <p>Os dados são armazenados na infraestrutura da Google Cloud com criptografia em repouso e em trânsito. Utilizamos firewalls, autenticação de múltiplos fatores e monitoramento contínuo.</p>
+
+        <p><strong>6. Retenção dos Dados</strong></p>
+        <p>Os dados são armazenados pelo tempo necessário às finalidades descritas. Informações de cartão não são usadas para transações financeiras.</p>
+
+        <p><strong>7. Direitos dos Usuários</strong></p>
+        <p>Você pode solicitar: confirmação de tratamento, acesso, correção, anonimização, portabilidade e revogação do consentimento. Contato: <a href="mailto:contato@validamais.com.br">contato@validamais.com.br</a></p>
+
+        <p><strong>8. Uso de Cookies e Tecnologias Similares</strong></p>
+        <p>Utilizamos cookies, web beacons e tecnologias para melhorar a navegação. Eles não identificam diretamente o usuário.</p>
+
+        <p><strong>9. Responsabilidades do Usuário</strong></p>
+        <p>O usuário deve manter seus dados seguros, incluindo senhas. Não nos responsabilizamos por negligência individual.</p>
+
+        <p><strong>10. Atualizações da Política</strong></p>
+        <p>Podemos atualizar esta política. Avisaremos por e-mail ou dentro da plataforma.</p>
+
+        <p><strong>11. Contato</strong></p>
+        <p><a href="mailto:suporte@validamais.com.br">suporte@validamais.com.br</a> – Equipe de Privacidade – Valida+</p>
+
+        <p><strong>12. Disposições Gerais</strong></p>
+        <p>Ao usar a plataforma, você concorda com esta política. O foro competente será o da comarca de São Paulo/SP.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="modal fade" id="modalPoliticaAuto" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content" style="background-color: #2b3035; color: #fff; border-radius: 16px; padding: 20px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Política de Privacidade</h5>
+        </div>
+        <div id="politicaTextoAuto" class="modal-body" style="max-height: 300px; overflow-y: auto;">
+          <p><strong>Política de Privacidade – Valida+</strong></p>
+
+        <p><strong>1. Introdução</strong></p>
+        <p>Esta Política de Privacidade descreve como coletamos, usamos, divulgamos e protegemos suas informações ao acessar e utilizar os serviços oferecidos pela plataforma Valida+. Ao utilizar nossos serviços, você concorda com a coleta e uso de informações de acordo com esta política.</p>
+        <p>Nos comprometemos com a transparência, segurança e respeito aos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018) e demais legislações aplicáveis.</p>
+
+        <p><strong>2. Informações Coletadas</strong></p>
+        <p>Durante a utilização da plataforma Valida+, coletamos diferentes tipos de dados pessoais para fins de identificação, autenticação, personalização e melhoria da experiência do usuário.</p>
+
+        <p><strong>2.1. Dados fornecidos pelo usuário</strong></p>
+        <p>Nome completo<br>Endereço de e-mail<br>Telefone de contato<br>Data de nascimento<br>Informações do cartão (nome, número, validade, CVV) – armazenadas com segurança e com acesso restrito<br>Dados enviados por meio de formulários como login, registro e atualização de perfil</p>
+
+        <p><strong>2.2. Dados coletados automaticamente</strong></p>
+        <p>Informações de acesso (IP, tipo de navegador, dispositivo)<br>Registros de atividades (data e hora de login, histórico de validações)<br>Identificador único de usuário (UID) fornecido pelo Firebase Authentication</p>
+
+        <p><strong>3. Finalidade da Coleta</strong></p>
+        <p>Todos os dados coletados têm como objetivo garantir a operação, segurança e melhoria contínua da plataforma Valida+. Os principais usos incluem: autenticação, criação de contas, validação de cartões, comunicação com o usuário, prevenção de fraudes e obrigações legais.</p>
+
+        <p><strong>4. Compartilhamento de Dados</strong></p>
+        <p>Seus dados não são comercializados, vendidos ou compartilhados com terceiros, exceto com: prestadores de serviço autorizados (como Firebase), por obrigação legal, ou em caso de fusão/aquisição.</p>
+
+        <p><strong>5. Armazenamento e Segurança</strong></p>
+        <p>Os dados são armazenados na infraestrutura da Google Cloud com criptografia em repouso e em trânsito. Utilizamos firewalls, autenticação de múltiplos fatores e monitoramento contínuo.</p>
+
+        <p><strong>6. Retenção dos Dados</strong></p>
+        <p>Os dados são armazenados pelo tempo necessário às finalidades descritas. Informações de cartão não são usadas para transações financeiras.</p>
+
+        <p><strong>7. Direitos dos Usuários</strong></p>
+        <p>Você pode solicitar: confirmação de tratamento, acesso, correção, anonimização, portabilidade e revogação do consentimento. Contato: <a href="mailto:contato@validamais.com.br">contato@validamais.com.br</a></p>
+
+        <p><strong>8. Uso de Cookies e Tecnologias Similares</strong></p>
+        <p>Utilizamos cookies, web beacons e tecnologias para melhorar a navegação. Eles não identificam diretamente o usuário.</p>
+
+        <p><strong>9. Responsabilidades do Usuário</strong></p>
+        <p>O usuário deve manter seus dados seguros, incluindo senhas. Não nos responsabilizamos por negligência individual.</p>
+
+        <p><strong>10. Atualizações da Política</strong></p>
+        <p>Podemos atualizar esta política. Avisaremos por e-mail ou dentro da plataforma.</p>
+
+        <p><strong>11. Contato</strong></p>
+        <p><a href="mailto:suporte@validamais.com.br">suporte@validamais.com.br</a> – Equipe de Privacidade – Valida+</p>
+
+        <p><strong>12. Disposições Gerais</strong></p>
+        <p>Ao usar a plataforma, você concorda com esta política. O foro competente será o da comarca de São Paulo/SP.</p>
+          <p style="margin-top: 600px;"></p>
+        </div>
+        <div class="modal-footer border-0 d-flex flex-column align-items-center">
+          <div id="checkConfirmAuto" class="text-success fs-2 d-none">✔️</div>
+          <button id="btnAceitarAuto" class="btn btn-success w-100 mt-2" disabled>Aceitar Política de Privacidade</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      grabCursor: true,
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+    const politicaTextoAuto = document.getElementById('politicaTextoAuto');
+    const btnAceitarAuto = document.getElementById('btnAceitarAuto');
+    const checkConfirmAuto = document.getElementById('checkConfirmAuto');
+    const showModal = new bootstrap.Modal(document.getElementById('modalPoliticaAuto'));
+
+    window.addEventListener('load', () => {
+      const jaAceitou = localStorage.getItem('politica_aceita');
+      if (!jaAceitou) {
+        showModal.show();
+      }
+    });
+
+    politicaTextoAuto?.addEventListener('scroll', function () {
+      const scrollable = politicaTextoAuto.scrollHeight - politicaTextoAuto.clientHeight;
+      const currentScroll = politicaTextoAuto.scrollTop;
+      if (currentScroll >= scrollable - 10) {
+        btnAceitarAuto.disabled = false;
+      }
+    });
+
+    btnAceitarAuto?.addEventListener('click', () => {
+      checkConfirmAuto.classList.remove('d-none');
+      btnAceitarAuto.classList.add('d-none');
+      setTimeout(() => {
+        const modal = bootstrap.Modal.getInstance(document.getElementById('modalPoliticaAuto'));
+        modal.hide();
+        localStorage.setItem('politica_aceita', 'true');
+        checkConfirmAuto.classList.add('d-none');
+        btnAceitarAuto.classList.remove('d-none');
+        btnAceitarAuto.disabled = true;
+        politicaTextoAuto.scrollTop = 0;
+      }, 3000);
+    });
+  </script>
+</body>
 </html>
->
