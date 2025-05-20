@@ -96,20 +96,69 @@
         font-size: 14px;
         color: #ccc;
       }
+      .dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 15px 20px;
+  background-color: #2b3035;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.logo-center-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo-center-img {
+  height: 40px;
+  display: block;
+}
+
+.menu-topo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.menu-topo a {
+  color: #ffb3b3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-icon {
+  height: 36px;
+  width: 36px;
+}
+
     </style>
   </head>
 
   <body>
     <!-- Top Navigation -->
-    <header class="top-bar">
-      <a href="perfil.html">
-        <img src="../assets/img/icons/profile.png" alt="Perfil" class="profile-icon">
-      </a>
-      <a href="#" id="logoutLink" class="logout-link">Sair</a>
-    </header>
+    <header class="dashboard-header">
+  <div class="header-left">
+    <a href="perfil.html">
+      <img src="../assets/img/icons/profile.png" alt="Perfil" class="profile-icon">
+    </a>
+  </div>
 
-    <!-- Logo -->
-    <img src="../assets/img/logo.png" alt="Logo Valida+" class="logo-center">
+  <a href="index.html" class="logo-center-link">
+    <img src="../assets/img/logo.png" alt="Logo Valida+" class="logo-center-img">
+  </a>
+
+  <div class="menu-topo">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="#" id="logoutLink">Sair</a>
+  </div>
+</header>
 
     <!-- Welcome -->
     <section class="text-center mt-3">
