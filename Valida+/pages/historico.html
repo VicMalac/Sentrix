@@ -44,8 +44,15 @@
       flex-direction: column;
       justify-content: space-between;
     }
-    .cartao-verso {
-      transform: rotateY(180deg);
+    .cartao-frente .topo-frente {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cartao-frente .meio-frente {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .cartao-frente img.logo-nubank,
     .cartao-frente img.logo {
@@ -56,7 +63,18 @@
     }
     .cartao-frente img.mastercard {
       width: 60px;
-      align-self: flex-end;
+    }
+    .cartao-frente .nome-titular {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+    .cartao-verso {
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .banda-magnetica {
       background: #000;
@@ -111,8 +129,8 @@
       .cartao-frente img.chip {
         width: 35px;
       }
-      .cartao-frente .fs-5 {
-        font-size: 1rem !important;
+      .cartao-frente .nome-titular {
+        font-size: 0.9rem;
       }
     }
   </style>
