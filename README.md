@@ -71,4 +71,3 @@ const firebaseConfig = {
   messagingSenderId: "SEU_ID",
   appId: "SEU_APP_ID"
 };
-´´´
