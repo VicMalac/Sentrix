@@ -1,5 +1,29 @@
-# Valida-Mais
+# 💳 Valida+
 
-Valida+ é um programa feito para um pitch de vendas na faculdade de Gestão da Tecnologia da Informação da Fatec Omair Fagundes em Bragança Paulista
+**Renove seu cartão. Economize tempo. Evite burocracias.**
 
-Sentrix foi a empresa que foi criada no meu grupo para esses trabalhos que serão feitos
+[🌐 Acesse agora](https://validamais.netlify.app/)
+
+---
+
+## 📌 Visão Geral
+
+Valida+ é uma plataforma web que permite aos usuários **prolongar a validade de seus cartões bancários** por mais 2 anos, de forma segura e rápida, evitando a emissão de novos cartões físicos. Desenvolvido com foco em praticidade, sustentabilidade e integração com os principais bancos brasileiros.
+
+---
+
+## 🚀 Acesse Online
+
+A forma mais simples de utilizar o Valida+ é acessando diretamente:
+
+🔗 **https://validamais.netlify.app/**
+
+---
+
+## 🛠️ Executando Localmente
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/seu-usuario/validamais.git
+cd validamais
