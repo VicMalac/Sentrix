@@ -8,7 +8,7 @@
 
 ## 📌 Visão Geral
 
-Valida+ é uma plataforma web que permite aos usuários **prolongar a validade de seus cartões bancários** por mais 2 anos, de forma segura e rápida, evitando a emissão de novos cartões físicos. Desenvolvido com foco em praticidade, sustentabilidade e integração com os principais bancos brasileiros.
+Valida+ é uma plataforma web que permite aos usuários **prolongar a validade de seus cartões bancários** por mais 2 anos a partir da data atual, de forma segura e rápida, evitando a emissão de novos cartões físicos. Desenvolvido com foco em praticidade, sustentabilidade e integração com os principais bancos brasileiros.
 
 ---
 
