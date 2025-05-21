@@ -62,6 +62,7 @@ Vá em Firestore Database → Crie o banco (modo de teste)
 
 Clique em Configurar Firebase SDK e copie os dados da sua configuração:
 
+```bash
 const firebaseConfig = {
   apiKey: "SUA_API_KEY",
   authDomain: "SEU_DOMINIO",
@@ -70,3 +71,4 @@ const firebaseConfig = {
   messagingSenderId: "SEU_ID",
   appId: "SEU_APP_ID"
 };
+´´´
