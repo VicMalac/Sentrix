@@ -34,7 +34,7 @@ Antes de tudo, certifique-se de ter:
 
 ---
 
-## 1. Clonar o Repositório
+## Clonar o Repositório
 
 
 
