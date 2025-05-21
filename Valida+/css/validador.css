@@ -1,0 +1,202 @@
+body {
+        background-color: #212529;
+        font-family: 'Segoe UI', sans-serif;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      .header {
+        background-color: #212529;
+        padding: 15px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .profile-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      .menu {
+        display: flex;
+        gap: 20px;
+      }
+
+      .menu a {
+        color: #bb86fc;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .container-validacao {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        padding: 60px 20px;
+      }
+
+      #cartaoContainer {
+        perspective: 1000px;
+        width: 320px;
+        height: 180px;
+        position: relative;
+      }
+
+      .cartao {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        transition: transform 0.6s ease;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .cartao-frente,
+      .cartao-verso {
+        backface-visibility: hidden;
+        border-radius: 16px;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        box-sizing: border-box;
+      }
+
+      .cartao-frente {
+        background: linear-gradient(135deg, #7b1fa2, #9c27b0);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 2;
+      }
+
+      .cartao-verso {
+        background: linear-gradient(135deg, #7b1fa2, #9c27b0);
+        transform: rotateY(180deg);
+        color: white;
+      }
+
+      .flipped {
+        transform: rotateY(180deg);
+      }
+
+      .banda-magnetica {
+        height: 40px;
+        background: #000;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+
+      .numero-cartao,
+      .nome-cartao,
+      .validade-cartao,
+      .cvv-cartao {
+        font-size: 16px;
+        letter-spacing: 2px;
+      }
+
+      .form-validacao {
+        background: #ffffff;
+        color: #000;
+        padding: 30px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .form-validacao input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #e8f0fe;
+      }
+
+      .form-validacao .linha {
+        display: flex;
+        gap: 10px;
+      }
+
+      .form-validacao .linha input {
+        flex: 1;
+      }
+
+      .form-validacao button {
+        width: 100%;
+        padding: 12px;
+        background: #6a1b9a;
+        border: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .form-validacao button:hover {
+        background: #8e24aa;
+      }
+
+      .selos-seguranca {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .selos-seguranca img {
+        height: 40px;
+      }
+
+      .linha-cartao {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-cartao {
+        height: 44px;
+      }
+
+      .logo-megacard {
+        height: 30px;
+      }
+      @media (max-width: 768px) {
+  .container-validacao {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  #cartaoContainer {
+    width: 95vw;
+    height: auto;
+    max-width: 360px;
+  }
+
+  .cartao {
+    height: auto;
+    min-height: 180px;
+  }
+
+  .cartao-frente,
+  .cartao-verso {
+    position: relative;
+    height: auto;
+    min-height: 180px;
+  }
+
+  .form-validacao {
+    width: 90%;
+    max-width: 400px;
+  }
+}

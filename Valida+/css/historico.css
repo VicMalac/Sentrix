@@ -1,0 +1,125 @@
+body {
+      background-color: #2b3035;
+      color: white;
+    }
+    .cartao-realista {
+      width: 360px;
+      height: 220px;
+      perspective: 1000px;
+      margin: 20px;
+    }
+    .cartao-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .cartao-inner.virado {
+      transform: rotateY(180deg);
+    }
+    .cartao-frente, .cartao-verso {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #7b1fa2, #9c27b0);
+      color: white;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .cartao-frente {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cartao-frente .topo-frente {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cartao-frente .meio-frente {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cartao-frente img.logo-nubank,
+    .cartao-frente img.logo {
+      width: 60px;
+    }
+    .cartao-frente img.chip {
+      width: 40px;
+    }
+    .cartao-frente img.mastercard {
+      width: 60px;
+    }
+    .cartao-frente .nome-titular {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+    .cartao-verso {
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .banda-magnetica {
+      background: #000;
+      height: 40px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .linha-dados {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .campo-label {
+      font-size: 0.6rem;
+      color: #bbb;
+    }
+    .info-menor {
+      font-size: 0.6rem;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 576px) {
+  .cartao-realista {
+    width: 95vw;
+    height: 200px; /* Altura fixa */
+    margin: 10px auto;
+  }
+
+  .cartao-inner {
+    height: 100%;
+  }
+
+  .cartao-frente,
+  .cartao-verso {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .linha-dados {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .linha-dados > div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nome-titular {
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

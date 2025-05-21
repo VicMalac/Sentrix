@@ -1,0 +1,44 @@
+        html, body {
+        height: 100%;
+        font-family: 'Segoe UI', sans-serif;
+      }
+
+      .form-signin {
+        max-width: 330px;
+        padding: 1rem;
+      }
+
+      .logo-img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .form-floating input:focus {
+        background-color: #212529 !important;
+        color: #fff;
+        box-shadow: none;
+        border-color: #6a1b9a;
+      }
+
+      .form-floating label {
+        color: #aaa;
+      }
+
+      .mensagem-erro {
+        margin-top: 15px;
+        color: #f44336;
+        background: #ffe6e6;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 14px;
+      }
+      input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        select:-webkit-autofill {
+        box-shadow: 0 0 0px 1000px #212529 inset !important;
+        -webkit-text-fill-color: #fff !important;
+        transition: background-color 5000s ease-in-out 0s;
+        }

@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const visualCVV = document.getElementById('visualCVV');
   const cartaoContainer = document.getElementById('cartaoContainer');
 
-  // Atualização em tempo real
   nomeInput.addEventListener('input', () => {
     visualNome.textContent = nomeInput.value || "Nome no Cartão";
   });
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   validadeInput.addEventListener('input', () => {
-  let valor = validadeInput.value.replace(/\D/g, '').slice(0, 4); // mantém só números
+  let valor = validadeInput.value.replace(/\D/g, '').slice(0, 4);
 
   let mes = valor.substring(0, 2);
   let ano = valor.substring(2, 4);
@@ -47,19 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
     visualCVV.textContent = cvvInput.value || "CVV";
   });
 
-  // Flip
   cvvInput.addEventListener('focus', () => cartaoContainer.classList.add('flipped'));
   cvvInput.addEventListener('blur', () => cartaoContainer.classList.remove('flipped'));
   nomeInput.addEventListener('focus', () => cartaoContainer.classList.remove('flipped'));
   numeroInput.addEventListener('focus', () => cartaoContainer.classList.add('flipped'));
   validadeInput.addEventListener('focus', () => cartaoContainer.classList.add('flipped'));
 
-  // Autenticação
   firebase.auth().onAuthStateChanged(user => {
     usuarioLogado = user || null;
   });
 
-  // Envio do formulário
   document.getElementById('cartaoForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 

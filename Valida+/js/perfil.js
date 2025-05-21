@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Preencher dados existentes
     try {
       const doc = await db.collection('usuarios').doc(user.uid).get();
       if (doc.exists) {
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error("Erro ao carregar dados do perfil:", error);
     }
 
-    // Atualizar dados ao enviar o formulário
     perfilForm?.addEventListener('submit', async function (event) {
       event.preventDefault();
 
@@ -49,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Logout
   const logoutLink = document.getElementById('logoutLink');
   logoutLink?.addEventListener('click', (e) => {
     e.preventDefault();
