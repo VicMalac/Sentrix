@@ -62,9 +62,6 @@ Vá em Firestore Database → Crie o banco (modo de teste)
 
 Clique em Configurar Firebase SDK e copie os dados da sua configuração:
 
-js
-Copiar
-Editar
 const firebaseConfig = {
   apiKey: "SUA_API_KEY",
   authDomain: "SEU_DOMINIO",
