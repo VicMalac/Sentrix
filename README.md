@@ -42,11 +42,13 @@ Abra o terminal (ou Prompt de Comando no Windows) e digite:
 
 ```bash
 git clone https://github.com/VicMalac/Sentrix.git
+```
 
 Isso vai criar uma pasta validamais/ com os arquivos do projeto.
 
 
-Firebase: conecte ao seu próprio projeto (opcional, porém não irá conseguir ver os dados se não colocar)
+## Firebase: 
+    Conecte ao seu próprio projeto (opcional, porém não irá conseguir ver os dados se não colocar)
 O sistema já vem conectado a um Firebase funcional para testes, mas se quiser salvar e visualizar seus próprios dados, siga os passos abaixo:
 
 👉 Passos para usar seu Firebase:
